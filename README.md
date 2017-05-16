@@ -22,6 +22,16 @@ import ColombiaMap from "./ColombiaMap.jsx";
     ></ColombiaMap>
 ```
 
+You can also test it with the included create-react-app
+
+```
+npm install
+npm start
+```
+
+
+
+## Original README
 
 
 
