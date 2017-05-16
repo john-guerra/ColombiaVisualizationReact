@@ -270,6 +270,7 @@ export default class ColombiaMap extends Component {
 		    });
 		}
 	}
+
 	render() {
 		return (
 			<div className="colombiaMap">

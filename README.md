@@ -1,3 +1,30 @@
+## Colombia Map Visualization Using React
+
+This is a simple React component that you can use on your applications to create a cloropleth visualization of Colombia by Departamentos.
+
+To use it make sure to include d3@v3, it won't work with the latest version of d3, so make sure to install the dependency like this:
+
+```
+npm install --save d3@v3
+```
+
+Then make the `colombia.geo.json` file available in the public directory and include the component like this:
+
+```
+import ColombiaMap from "./ColombiaMap.jsx";
+
+// Omitted code
+
+  <ColombiaMap
+    width="600"
+    height="600"
+    data={Risaralda:10}
+    ></ColombiaMap>
+```
+
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
@@ -1516,17 +1543,17 @@ When you build the project, Create React App will place the `public` folder cont
 2. Install `serve` by running `npm install --save serve`.
 
 3. Add this line to `scripts` in `package.json`:
-    
+
     ```
     "now-start": "serve build/",
     ```
-    
+
 4. Run `now` from your project directory. You will see a **now.sh** URL in your output like this:
-    
+
     ```
     > Ready! https://your-project-dirname-tpspyhtdtk.now.sh (copied to clipboard)
     ```
-    
+
     Paste that URL into your browser when the build is complete, and you will see your deployed app.
 
 Details are available in [this article.](https://zeit.co/blog/now-static)
