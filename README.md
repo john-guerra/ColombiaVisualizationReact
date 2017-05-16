@@ -18,7 +18,7 @@ import ColombiaMap from "./ColombiaMap.jsx";
   <ColombiaMap
     width="600"
     height="600"
-    data={Risaralda:10}
+    data={{RISARALDA:10}}
     ></ColombiaMap>
 ```
 
