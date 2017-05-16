@@ -64,18 +64,13 @@ export default class ColombiaMap extends Component {
 		  .attr('x', 20)
 		  .attr('y', 45);
 
-	  // Risaralda
-		svg.append("circle")
-			.attr("r", 1)
-			.attr("cx", this.projection([-75.9928, 5.3158 ])[0])
-			.attr("cy", this.projection([-75.9928, 5.3158 ])[1])
-
+		let me = this;
 		// Load map data
 		d3.json('colombia.geo.json', function(error, mapData) {
 		  var features = mapData.features;
 
 		  // Update color scale domain based on data
-		  color.domain([0, d3.max(features, nameValue)]);
+		  color.domain([0, d3.max(d3.values(me.props.data || {}))]);
 
 		  // Draw each province as a path
 		  mapLayer.selectAll('path')
@@ -94,17 +89,10 @@ export default class ColombiaMap extends Component {
 		  return d && d.properties ? d.properties.NOMBRE_DPT : null;
 		}
 
-		// Get province name length
-		function nameValue(d){
-		  return self.props && self.props.data && self.props.data[nameFn(d)] ?
-		  	self.props.data[nameFn] :
-		  	0
-		  ;
-		}
 
 		// Get province color
 		function fillFn(d){
-		  return color(nameValue(d));
+		  return color(me.props.data[nameFn(d)]||0);
 		}
 
 		// When clicked, zoom in
